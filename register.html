@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="navbar_container">
+        <div class="Logo_container"><h1 class="Logo">Raffle</h1></div>
+        <div class="Menu_container">
+            <ul class="Menu_list">
+                <li class="Menu_list_item active">
+                    <div>
+                        <a class="Menu_list_item_feature" href="index.html">Home</a>
+                    </div>
+                </li>
+                <li class="Menu_list_item">
+                    <div>
+                        <a class="Menu_list_item_feature" href="http://google.com">Movies</a>
+                    </div>
+                </li>
+                <li class="Menu_list_item">
+                    <div>
+                        <a class="Menu_list_item_feature" href="http://google.com">Series</a>
+                    </div>
+                </li>
+                <li class="Menu_list_item">
+                    <div>
+                        <a class="Menu_list_item_feature" href="http://google.com">Trends</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="body" class="feature_content"  style="  background-repeat: no-repeat; background-image:linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://wallpaperaccess.com/full/527673.jpg');">
+        <form action="" id="registerForm" method="post">
+            <h1 class="Login_title">Register</h1>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <label for="password">Full name</label>
+            <input type="text" name="fullname" id="fullname">
+            <input type="submit" value="Sign up">
+            <input type="button" value="Sign in" onclick="login()" >
+        </form>
+    </div>
+    <script src="register.js"></script>
+</body>
+
+</html>

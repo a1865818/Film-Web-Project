@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar_container">
+            <div class="Logo_container"><h1 class="Logo">Raffle</h1></div>
+            <div class="Menu_container">
+                <ul class="Menu_list">
+                    <li class="Menu_list_item active">
+                        <div>
+                            <a class="Menu_list_item_feature" href="index.html">Home</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="yourname.html">Movies</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="http://google.com">Series</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="https://www.youtube.com">Trends</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="Sign_in_up_container">
+                <input type="button" value="Sign in" onclick="Login()">
+                <input type="button" value="Sign up" onclick="Register()">
+            </div> -->
+            <!-- autocomplete="off" action="/action_page.php" -->
+            <form class="wrap" autocomplete="off" action="/action_page.php" >
+                <div class="search autocomplete">
+                    
+                   <input type="text" class="searchTerm" id="myInput" placeholder="Search">
+                   <!-- <button type="submit" class="searchButton">
+                     <i class="fa fa-search"></i>
+                  </button> -->
+                </div>
+                
+            </form>
+            <div class="profile_container">
+                
+                <img class="profile_picture" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX+/v68vb+6u723uLr8/Py0tbf//vz39/fx8fH+/v/j5OW8vLzz8/P29va5ubm+v8HZ2dnp6enOz9Hf39/V1tbFxsjLzM7Excjn5+fX2di1uLbLzczBw8LV19XW19rf4eCTmLbdAAAHMElEQVR4nO2dDXPbIAyGYzAxMQ4YfyVbsvT//8uB3TbJ1jq2EUbu8eyaZdutx1tAEkSSd7tIJBKJRCKRSCQSiUQikcgzGde5RfMs9FDg4XWVMMbogHmXVDUPPSg4eJNQSpJEJcnDi5Si0aGHBkH6pqy6LyHkmqehB+hKrug38gaoykMP0Qne0o+F+SX2X+h1wxuylMKo+F7gIFGwMvRAF5K24wv0Yam2m9yNXJCR9fk8kURscKVqISYKtBKF2Jzj0EJOlDdoFHJjs1gQMmZD/59E4xuPoQc9iznyPgk96DlcSDJfo+xCD3s69aw9eJdYhx74FA7mq5DJd5HoC4nF+3dAzN6+dMv0GWvTfX4P1JzpAivTo+g59OBfYqOv6yxH8aDPTOI1tIAp5FOj0a+gWzhLCQeB5qAReviv0S5TaCYR/05slxrSAdKGFvCKo1xqSN9h2G8aa7dFaiYRe2BzchSYJKfQEsY5MMdFmiiGO2xzcoYDyF1i5WZJLaQKLWKU07KA7Y5CvhFT90Vqlinmq8WCOU6hhRWhZYyQm4OTszFFbWpuIKv0V2gZIwCYUmNML6FljNABCEwSzArbn64wdY9KLVe87iIqjAqjQgTA2FLMVzUXEIWIvQVQTIP5gNiAKGxCyxjB+abNQjHftnEQhZhzFlLnqzZ72YbYWex27gKNxNAiRqmEs0aB2ZTaHAXnSwzk+QpH5jqFCUOeOSSd70tlaAkvcPb5qP29hTv6C8Uwe8Me5TiJuH2FxTFwQx2yDaSOn+Nj/5Db0Djl0/wJPfwJZEsyL7c0hbtduTivLaHbqEtI1dQk/f9QqI8Vd/SyBFoh6GYS9hu5KLlN4j5VPJIuy96TG1mjlmLJEQP7oeKZ8/zwlOHPSnxidvC2gXDtH8p5EjfiCZ+YNYvbm0GLJlODcEI24wifOSryOr1G2VrgTVnRJ0r2ehoJu4UepgtZx8hoHTBh3SaOEyPw7ttyfLM+aYf+WmYCx+YqvwhUhZTXZrsb8JmU160ilFIyYN+ptuYbikMnkHL9VlaXzvyqyjf9g9S9UvJzlEYikQgMB9wFPZFZ8HN9q9rTxO4tqu1uZa4xh+APJfQpzy9Ckj5Cm6Svx4ZyUsq21Mgj1SJvFR05S7wUSmmibmgb1hW3loBkfUlxQbhi07fW/PwBqp56zE+q4qgMc1GR4ZYbJOurf6XshKf+SbcTrmNmyRveUNkEP3lYG8q/7xroLJfKP8E18lYubPQxSWIiRRlUY9bI0as0d4UqbGfFPKHepu8uMqFtEabzUNpBeL8pEFqHUKi9GZgvoKf1Q4DKPZN0OkqRtauDs6v/HWizM+4aV85jmP7BGSD0lK529wjQ/WIBiqi1NmO+po25CzRfYp1mBLn0F8S80CjkGhJziM4QywQmgkj/dwBh9uCnSiJ870WQ2i0XiOdEcJuxFmaNfqCk3xLTS1iFfWoH8xfdHKyVQQDNfMXhh2x5fjMkxF873op4Pe9ORXlLY+RMjTbJXw9fPQkWd88Fx1OHzOCu8I6nDplOxTDAeOlRvzA93Q/SR8KtY3NZWLzEbjc0dsbiozEfDj/xjvJQXuNYVwgNeQNXqHFEbB94KIgGaVsChvLQvR2k9Qwgv8EVYvKGlt/gtxkoToYPSGhjekS1DRMPVTZhr9i+gEBXaZTIDA18VzeQPmWwACtE5e57GLBCXBFNf6kI6y5SbM7CGFNYd8ERKoR1FzWyVZrAxt57jM6ib4oNdfe9R+ksgJuAwjTqhuWaghUHpFDtc2ERcAr32K4wBsz5CW4fZtjibgusQnzu0CiEy8vYY3T4RqEGzMlEdd/9AdwHUMZgoTv/WmgO+LjLN5QKa0CFvzAqJCWkQoz+0ITecAqxXQf3gCr8ExWGIK7SWcxsa7UOFNKW4vpo7R1Qf3hGqfAMqBBl5A3YNTqFaLUODzuCzeEe5smN0NAMUiHGexq1A9yHGG8T7QN3ABXmcJXoUNhbfSiFB5jHq8CioB/gXS3u7+wHRaAfqovOX8CnCSMLTcGn0Epc1qUbnr5Mz0v5E57wWxHhp6GkTnB4RUWUr46Z2WoV+GMoevJYZ1nLgNMoRL8HWee13jmt4Dq1LFBoBXpvG128aJzrE0Vou0bBOrcag4ikavDz/lXyDqTn1Vx9SZ2u1+SkKMVvsV6o2nf9XrsXT6pbSV2emjNVm7IOgqo8RK+hY90y6vvQYXY8ZdXKTbEP99+zumN+m0hQ1gVva6abfiqHufyY0IXG9ul/CclEFVxezyE7VyfyMJnq38HOlWk8HyNtg6spdsbLzvYld7c+5melWqQNIlOu6+409F9fIm3o1t6ccaqzDDbI6MybVglK5Gcf039n9fHPhFCrTaiuyfU6LWiAyIzS+ta1irIe+szwl0xcu6asEU/bRA7pkXOt80+05sURlSHxxv7z5aeyfyf0OCKRSCQSiUQikUgkEtk0fwFK6HUUlmNMowAAAABJRU5ErkJggg==" alt="">
+                <div class="profile_text_container dropdown">
+                    <!-- <span class="profile_text">Profile</span> -->
+                    <button class="profile_text dropbtn" id="userfullname">Profile
+                        <i class="search_logo fas fa-caret-down "></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html">Sign in</a>
+                        <a href="register.html">Sign up</a>
+                        <a href="login.html" onclick="logout()">
+                            Sign out
+                        </a>
+                    </div>                    
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle_icon"></i>
+                    <i class="fas fa-sun toggle_icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    <!-- </div>
+    <div class="Sidebar">
+        <i class="left_menu_icon fas fa-home"></i>
+        <i class="left_menu_icon fas fa-search"></i>
+        <i class="left_menu_icon fas fa-users"></i>
+        <i class="left_menu_icon fas fa-tv"></i>
+        <i class="left_menu_icon fas fa-history"></i>
+    </div> -->
+    <div class="container">
+        <div class="Content_container">
+            <div class="feature_content"  style="  background-repeat: no-repeat; background-image:linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://wallpaperbat.com/img/628845-your-name-anime-wallpaper-top-free-your-name-anime-background.jpg');">
+                <h2 class="featured-title">Your Name</h2>
+                <p class="featured-desc">Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.</p>
+                <button class="featured-button">
+                    <a style="color: white; text-decoration: none;" href="yourname.html">
+                        Watch
+                    </a></button>
+                </button>
+            </div>
+            <div class="movie_list_container">
+                <h1 class="movie_list_title">NEW RELEASES</h1>
+                <div class="movie_list_wrapper">
+                    <div class="movie_list">
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://cdn-amz.fadoglobal.io/images/I/81cQwFJ0flL.jpg" alt="">
+                            <span class="movie_list_item_title">Komi cant talk</span>
+                            <p class="movie_list_item_desc">
+                                Komi isn't elusive; she can't get the courage to speak, and her cool demeanor is a mask to the anxiety she battles. However, despite this she has a goal to make 100 friends.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://images6.alphacoders.com/115/1156015.jpg" alt="">
+                            <span class="movie_list_item_title">Shin no Nakama</span>
+                            <p class="movie_list_item_desc">
+                                Red was once a member of the Hero's party, a powerful group destined to save the world from the evil forces of Taraxon, the Raging Demon Lord. That is, until one of his comrades kicked him out.
+
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://static.zerochan.net/Senpai.ga.Uzai.Kouhai.no.Hanashi.full.3412396.jpg" alt="">
+                            <span class="movie_list_item_title">Senpai ga Uzai</span>
+                            <p class="movie_list_item_desc">
+                                The story follows a short office woman named Igarashi Futaba, she's commonly made fun of due to her comically childish appearance juxtapose this to her large, burly, bear-like senpai, Takeda Harumi.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="http://cdn.animevietsub.tv/data/poster/2021/09/26/animevsub-qKsdLeMm6K.jpg" alt="">
+                            <span class="movie_list_item_title">Demon Slayer</span>
+                            <p class="movie_list_item_desc">
+                                A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://m.media-amazon.com/images/M/MV5BOWI2MWZhNDgtNzhjYy00NDE4LTllMzEtZTIzZGQ3MWQ2MGY5XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg" alt="">
+                            <span class="movie_list_item_title">Mushoku Tensei</span>
+                            <p class="movie_list_item_desc">
+                                A 34-year-old Japanese NEET is run over by a speeding truck and dies. Before he knows it, he is reborn as Rudeus Greyrat, and begins a new life full of adventure.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://lordmanga.com/wp-content/uploads/2021/02/Tsuki-Ga-Michibiku-Isekai-Douchuu.jpg" alt="">
+                            <span class="movie_list_item_title">Tsuki ga Michibiku </span>
+                            <p class="movie_list_item_desc">
+                                Makoto Misumi is a high school boy summoned to an alternate world as a brave warrior. Unfortunately, the goddess of the world said with disdain, "Your face is ugly," and banished him to the outermost fringes of the wilderness.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://github.com/safak/movie-website/blob/master/img/12.jpg?raw=true" alt="">
+                            <span class="movie_list_item_title">Due Date</span>
+                            <p class="movie_list_item_desc">
+                                Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie_list_container">
+                <h1 class="movie_list_title">MOST WATCHED</h1>
+                <div class="movie_list_wrapper">
+                    <div class="movie_list">
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://recommendmeanime.com/wp-content/uploads/2018/08/grand-blue-anime.jpg" alt="">
+                            <span class="movie_list_item_title">Grand Blue</span>
+                            <p class="movie_list_item_desc">
+                                Grand Blue follows Iori's misadventures with his eccentric new friends as he strives to realize his ideal college dream, while also learning how to scuba dive
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://i2.wp.com/www.monstersandcritics.com/wp-content/uploads/2021/09/That-Time-I-Got-Reincarnated-As-A-Slime-movie-release-date-in-Fall-2022-TenSura-Tensei-Shitara-Slime-Datta-Ken-movie.jpg?fit=1200%2C675&ssl=1" alt="">
+                            <span class="movie_list_item_title">Tensei Slime</span>
+                            <p class="movie_list_item_desc">
+                                Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life, but after dying at the hands of a robber, he awakens as a slime monster!
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://wallpaperaccess.com/full/2172166.jpg" alt="">
+                            <span class="movie_list_item_title">Sword Art Online</span>
+                            <p class="movie_list_item_desc">
+                                Plot. In 2022, a virtual reality massively multiplayer online role-playing game (VRMMORPG) called Sword Art Online (SAO) will be released,players can experience and control their in-game characters with their minds.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://ecdn.game4v.com/g4v-content/uploads/2021/01/Yahari-Ore-no-Seishun-OVA-1-game4v.jpg" alt="">
+                            <span class="movie_list_item_title">Yahari Ore</span>
+                            <p class="movie_list_item_desc">
+                                The story follows two loners, the pragmatic Hachiman Hikigaya and beautiful Yukino Yukinoshita assisted by the cheerful and friendly Yui Yuigahama.
+                            </p>
+                            <button class="movie_list_item_button">
+                                <a style="color: white; text-decoration: none;" href="movie.html">
+                                    Watch
+                                </a></button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://i.pinimg.com/originals/cf/a8/25/cfa8251ddbe50b0cea97d118f9ddd38e.jpg" alt="">
+                            <span class="movie_list_item_title">Nisekoi</span>
+                            <p class="movie_list_item_desc">
+                                Nisekoi follows high school students Raku Ichijō, the son of a leader in the yakuza faction Shuei-Gumi,and Chitoge Kirisaki, the daughter of a boss in a rival gang from America
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://gamek.mediacdn.vn/133514250583805952/2020/2/20/photo-1-15821850301071430968132.png" alt="">
+                            <span class="movie_list_item_title">5 gotoubun</span>
+                            <p class="movie_list_item_desc">
+                                Fuutarou Uesugi is a poor & anti-social top student. One day, he gets a job tutoring a rich family that's new to the town and his story begins
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://wallpaperaccess.com/full/2172166.jpg" alt="">
+                            <span class="movie_list_item_title">Due Date</span>
+                            <p class="movie_list_item_desc">
+                                Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="feature_content2"  style="  background-repeat: no-repeat; background-image:linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://images.alphacoders.com/804/thumb-1920-804298.jpg');">
+                <h2 class="featured-title">5 Centimeters per Second</h2>
+                <p class="featured-desc">Takaki and Akari are in elementary school and over time become best friends. Their friendship is put to the test when Akari has to move to another city.</p>
+                <button class="featured-button">WATCH</button>
+            </div>
+            <div class="movie_list_container">
+                <h1 class="movie_list_title">TOP RATED</h1>
+                <div class="movie_list_wrapper">
+                    <div class="movie_list">
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://ecdn.game4v.com/g4v-content/uploads/2021/01/Yahari-Ore-no-Seishun-OVA-1-game4v.jpg" alt="">
+                            <span class="movie_list_item_title">Yahari Ore</span>
+                            <p class="movie_list_item_desc">
+                                The story follows two loners, the pragmatic Hachiman Hikigaya and beautiful Yukino Yukinoshita assisted by the cheerful and friendly Yui Yuigahama.
+                            </p>
+                            <button class="movie_list_item_button">
+                                <a style="color: white; text-decoration: none;" href="movie.html">
+                                    Watch
+                                </a></button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://i.pinimg.com/originals/cf/a8/25/cfa8251ddbe50b0cea97d118f9ddd38e.jpg" alt="">
+                            <span class="movie_list_item_title">Nisekoi</span>
+                            <p class="movie_list_item_desc">
+                                Nisekoi follows high school students Raku Ichijō, the son of a leader in the yakuza faction Shuei-Gumi,and Chitoge Kirisaki, the daughter of a boss in a rival gang from America
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://gamek.mediacdn.vn/133514250583805952/2020/2/20/photo-1-15821850301071430968132.png" alt="">
+                            <span class="movie_list_item_title">5 gotoubun</span>
+                            <p class="movie_list_item_desc">
+                                Fuutarou Uesugi is a poor & anti-social top student. One day, he gets a job tutoring a rich family that's new to the town and his story begins
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://a4vf.com/wp-content/uploads/2019/10/bokutachi-ss2-2.jpg" alt="">
+                            <span class="movie_list_item_title">Bokutachi Benkyō </span>
+                            <p class="movie_list_item_desc">
+                                The series follows the story of Nariyuki Yuiga, a high school student tasked of tutoring three female geniuses as they start to gradually develop romantic feelings for him.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://magnavalon.files.wordpress.com/2019/10/fine.png" alt="">
+                            <span class="movie_list_item_title">Saenai Heroine</span>
+                            <p class="movie_list_item_desc">
+                                The story follows high school student Tomoya Aki, who recruits a trio of beautiful girls to help him develop a visual novel to sell at the Comiket convention.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://preview.redd.it/dgkfkl0nfou61.jpg?auto=webp&s=8e3b5dedc12478f59410b4fc59c076cb0f349126" alt="">
+                            <span class="movie_list_item_title">Horimiya</span>
+                            <p class="movie_list_item_desc">
+                                Kyoko Hori is a bright and popular high school student, in contrast to her classmate Izumi Miyamura, a gloomy and seemingly nerdy, glasses-wearing boy.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://github.com/safak/movie-website/blob/master/img/12.jpg?raw=true" alt="">
+                            <span class="movie_list_item_title">Due Date</span>
+                            <p class="movie_list_item_desc">
+                                Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <div class="movie_list_container">
+                <h1 class="movie_list_title">OLD BUT GOLD</h1>
+                <div class="movie_list_wrapper">
+                    <div class="movie_list">
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://upload.wikimedia.org/wikipedia/vi/thumb/4/46/Seto_no_Hanayome_poster.jpg/300px-Seto_no_Hanayome_poster.jpg" alt="">
+                            <span class="movie_list_item_title">Seto no Hayome</span>
+                            <p class="movie_list_item_desc">
+                                The story of Seto no Hanayome revolves around a young teenage boy named Nagasumi Michishio.In an attempt to save both Nagasumi and Sun's lives, Sun's family, reluctantly decides that the two are to be married.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://comicvine.gamespot.com/a/uploads/scale_small/11111/111112793/3468595-5115488596-33922.jpg" alt="">
+                            <span class="movie_list_item_title">Hataraku Maou-sama</span>
+                            <p class="movie_list_item_desc">
+                                The story is about Satan seeking to conquer the world of Ente Isla, but when confronted by the Hero Emilia, he is forced to retreat through a gate that transports him to modern day Tokyo, Japan
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://m.media-amazon.com/images/M/MV5BYjQzYjc4OGUtOWMyMC00MDM0LTliYjUtYWVhYjc4MGZiYWI1XkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_.jpg" alt="">
+                            <span class="movie_list_item_title">Zero no Tsukaima</span>
+                            <p class="movie_list_item_desc">
+                                Zero no Tsukaima, or The Familiar of Zero as it is known in the west, is a fantasy comedy-romance anime that tells the story of a young female mage named Louise, the main protagonist
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://wallpaperaccess.com/full/2172166.jpg" alt="">
+                            <span class="movie_list_item_title">Sword Art Online</span>
+                            <p class="movie_list_item_desc">
+                                Plot. In 2022, a virtual reality massively multiplayer online role-playing game (VRMMORPG) called Sword Art Online (SAO) will be released,players can experience and control their in-game characters with their minds.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://trytomotivatemehome.files.wordpress.com/2019/02/c245.jpg?w=532" alt="">
+                            <span class="movie_list_item_title">Chuunibyou demo </span>
+                            <p class="movie_list_item_desc">
+                                Her delusional life is still her reality. But as adulthood looms, fact becomes stranger than fiction.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://i.pinimg.com/550x/d3/6e/f2/d36ef2f8bbff05a4361092e820b979e1.jpg" alt="">
+                            <span class="movie_list_item_title">Konosuba</span>
+                            <p class="movie_list_item_desc">
+                                It was a happy day for Kazuma - right up to the moment he died. A goddess intervenes and offers him a second chance in a magical land.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                        <div class="movie_list_item">
+                            <img class="movie_list_item_img" src="https://i.pinimg.com/550x/d3/6e/f2/d36ef2f8bbff05a4361092e820b979e1.jpg" alt="">
+                            <span class="movie_list_item_title">Konosuba</span>
+                            <p class="movie_list_item_desc">
+                                It was a happy day for Kazuma - right up to the moment he died. A goddess intervenes and offers him a second chance in a magical land.
+                            </p>
+                            <button class="movie_list_item_button">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

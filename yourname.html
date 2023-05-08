@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar_container">
+            <div class="Logo_container"><h1 class="Logo">Raffle</h1></div>
+            <div class="Menu_container">
+                <ul class="Menu_list">
+                    <li class="Menu_list_item active">
+                        <div>
+                            <a class="Menu_list_item_feature" href="index.html">Home</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="http://google.com">Movies</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="http://google.com">Series</a>
+                        </div>
+                    </li>
+                    <li class="Menu_list_item">
+                        <div>
+                            <a class="Menu_list_item_feature" href="https://www.youtube.com">Trends</a>
+                        </div>
+                    </li>
+                </ul>
+            </div> 
+           <form class="wrap" autocomplete="off" action="/action_page.php" > 
+                <div class="search autocomplete">
+                    
+                   <input type="text" class="searchTerm" id="myInput" placeholder="Search">
+                   
+                </div> 
+                
+          </form> 
+            <div class="profile_container">
+                
+                <img class="profile_picture" src="data:image/png;base64,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" alt="">
+                <div class="profile_text_container dropdown">
+                   
+                    <button class="profile_text dropbtn" id="userfullname">
+                        <i class="search_logo fas fa-caret-down "></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html" onclick="logout()">
+                            Sign out
+                        </a>
+                        <a href="login.html">Sign in</a>
+                        <a href="register.html">Sign up</a>
+                    </div>                    
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle_icon"></i>
+                    <i class="fas fa-sun toggle_icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+        <div class="movie-banner container">        
+            <div class="m-banner-img" style=" background-image:linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://cdn-cf-east.streamable.com/image/bmxmh.jpg?Expires=1639699020&Signature=JNdjvf83QjO7AEtN7pD35KQuYbtke5mwHQOc63sHe1l1X7jHAcIWboKx-TZxYALgF0PjfG-2IIPfO5UXBEua0zyq6UNhkASHksNS5CXeDRj1GuOth~toCvYYiqzoiXRwEV1sIjMvbL78qaV0CXeWximNTu~Oqn1Ac4qNjWyBlzgpGnNaZa7pxH0z1tE7mUYXBdJyp-CIfDxsC~2Qz6L9RdtmQnRzXi8aE-VGcxb5JHTt5HKOi5dnzFZWbL1KzkMhO6m0YGPh9zfOuwRKjWLA7oMCZzw58nXIsS-67uJmEdSakIK99zaxe5I4bUEiQclaGrmq3~WMIjHu5Cts0B7vqQ__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ')">
+            <div class="banner-container">
+                <div class="title-container">
+                    <div class="title-top">
+                        <div class="movie-title">
+                            <h1>Your Name</h1>
+                        </div>
+                        <div class="more-about-movie">
+                            <span class="quality">Full HD</span>
+                            <span class="Details">Summer 2016</span>
+                            <span class="Details">1hr46minutes</span>
+                        </div>
+                        <div class="language">
+                            <span>Vietnamese</span>
+                        </div>
+                </div>
+                    <div class="title-bottom">
+                        <div class="category">
+                            <strong>Category</strong><br/>
+                            <a href="#">Romance</a>,<a href="#">Drama</a>,<a href="#">School</a>,<a href="#">Supernatural</a>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=xU47nhruN-Q" class="watch-btn">Watch trailer</a>
+                        </div>
+                    </div>
+                <div class="play-btn-container">
+                    <div class="play-btn">
+                        <a href="./Pics/1080p - Full HD - KenhAnime24h - Kimi no Na wa. 2016 [BD] - Kanefusa Fansub.mp4">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div id="play" class="play">
+                    <a href="javascript:void" class="close-movie">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <div class="play-movie">
+                        <video id="m-video" controls>
+                            <source src="./Pics/Yahari Ore.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="movie.js"></script>
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>
